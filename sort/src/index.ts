@@ -1,21 +1,23 @@
-class Sorter{
-    constructor( public collection: number[]){}
+import { CharactersCollection } from './CharactersCollection'
+import { NumbersCollection } from './NumbersCollection'
+import { Sorter } from './Sorter'
+import { LinkedList } from './LinkedList'
+// const numbersCollection = new NumbersCollection([1,4,10,-1,5, -10])
 
-    sort():void{
-        const { length } = this.collection
+// const charSorter = new CharactersCollection('asStASx')
+// sorter.sort()
+// console.log(sorter.collection)
 
-        for( let i = 0; i<length; i++){
-            for( let j = 0; j<length-i-1; j++){
-                if ( this.collection[j]>this.collection[j+1]){
-                    const temp = this.collection[j];
-                    this.collection[j] = this.collection[j+1];
-                    this.collection[j+1] = temp;
-                }
-            }
-        }
-    }
-}
+const linkedList = new LinkedList()
+linkedList.add(3)
+linkedList.add(-10)
+linkedList.add(4)
+linkedList.add(100)
 
-const sorter = new Sorter([1,4,2,-1])
+linkedList.print()
+const sorter = new Sorter(linkedList)
 sorter.sort()
-console.log(sorter.collection)
+
+linkedList.print()
+
+
